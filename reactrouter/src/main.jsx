@@ -9,6 +9,7 @@ import About from './components/About/About.jsx'
 import Contact from './components/Contact/Contact.jsx'
 import Login from './components/Login/Login.jsx';
 import User from './components/User/User.jsx';
+import Portfolio from './components/Portfolio/Portfolio.jsx';
 
 
 // const router = createBrowserRouter([
@@ -40,6 +41,7 @@ const router = createBrowserRouter(
       <Route path="contact" element={<Contact />} />
       <Route path="login" element={<Login />} />
       <Route path="user/:id" element={<User />} />
+      <Route path="portfolio" element={<Portfolio />} />
     </Route>
   )
 );
