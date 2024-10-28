@@ -26,6 +26,7 @@ function App() {
   function handleIncByClick(){
     dispatch(incrementByAmount(amount))
   }
+  
   return (
     <>
     <div className='container'>
