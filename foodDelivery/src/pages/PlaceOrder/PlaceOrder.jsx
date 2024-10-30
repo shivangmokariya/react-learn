@@ -11,8 +11,8 @@ function PlaceOrder() {
   // Get user data from localStorage
   const userData = JSON.parse(localStorage.getItem('user')) || [];
   console.log(userData,"<<<userData");
-  const initialFirstName = userData?.name.split(' ')[0] || '';
-  const initialLastName = userData?.name.split(' ')[1] || '';
+  const initialFirstName = userData?.name?.split(' ')[0] || '';
+  const initialLastName = userData?.name?.split(' ')[1] || '';
   const initialEmail = userData?.email || '';
 
   // Initialize form fields with state
