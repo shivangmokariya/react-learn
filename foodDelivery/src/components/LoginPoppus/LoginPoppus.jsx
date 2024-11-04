@@ -143,12 +143,13 @@
 
 // export default LoginPoppus;
 
-import React, { useEffect } from "react";
+import React from "react";
 import "./LoginPoppus.css";
 import { assets } from "../../assets/assets";
 import axios from "../../axios/axios";
 import { toast } from "react-toastify"; 
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 function LoginPoppus({ setShowLogin, setUserAuth }) { 
   const [currState, setCurrState] = React.useState("Login");
@@ -181,7 +182,7 @@ function LoginPoppus({ setShowLogin, setUserAuth }) {
           toast.success("Login successful!"); 
           
         setTimeout(() => {
-          setShowLogin(false);
+          setShowLogin(false); 
           window.location.reload(); 
         }, 500);
           localStorage.setItem("user", JSON.stringify(res.data.data));
@@ -196,6 +197,9 @@ function LoginPoppus({ setShowLogin, setUserAuth }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setEmail("");
+    setPassword("");
+    setName("");
     if (currState === "Sign Up") {
       handleSignUp();
     } else {
@@ -254,7 +258,7 @@ function LoginPoppus({ setShowLogin, setUserAuth }) {
           </label>
         </div>
 
-        <div>
+        <div className="click-hear">
           {currState === "Login" ? (
             <p>
               Create a new account?{" "}

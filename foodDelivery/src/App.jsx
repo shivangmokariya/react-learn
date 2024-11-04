@@ -39,6 +39,7 @@ import { useState } from "react";
 import LoginPoppus from "./components/LoginPoppus/LoginPoppus";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import UserProfile from "./pages/UserProfile.jsx/UserProfile";
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);
@@ -61,6 +62,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/profile" element={<UserProfile />} />
           <Route path="/order" element={<PlaceOrder />} />
         </Routes>
         <ToastContainer position="top-center" autoClose={2000} />

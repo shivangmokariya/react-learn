@@ -1,10 +1,12 @@
-import { useContext } from "react";
 import "./FoodDisplay.css";
-import { storeContext } from "../../contex/storContext";
 import FoodItem from "../FoodItem/FoodItem";
+import { useSelector } from "react-redux";
+// import { food_list } from '../../store/cartSlice';
 
 function FoodDisplay({ category }) {
-  const { food_list } = useContext(storeContext);
+  // const { food_list } = useContext(storeContext);
+  const food_list = useSelector((state) => state.cart.food_list); 
+
   return (
     <div className="food-display" id="food-display">
       <h2>Top dishes near you</h2>
